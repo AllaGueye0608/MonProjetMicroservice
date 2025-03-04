@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
 import uasz.sn.microservice_maquette.GestionDesEC.repository.ECRepository;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +29,9 @@ public class ECService {
         }
     }
 
+    public List<EC> findByUEId(Long ueId){
+        return findByUEId(ueId);
+    }
     public void delete(EC ec){
         ecRepository.delete(ec);
     }
