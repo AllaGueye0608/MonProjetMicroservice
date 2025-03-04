@@ -138,4 +138,17 @@ public class ECController {
         ecService.activer(id);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/details/{ueId}")
+    public ResponseEntity<List<EC>> getECsByUE(@PathVariable Long ueId) {
+        List<EC> ecs = ecService.findByUEId(ueId); // Récupère les ECs pour l'UE spécifiée
+        return ResponseEntity.ok(ecs);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<EC> getECDetails(@PathVariable Long id) {
+        EC ec = ecService.findById(id); // Récupère l'EC par son ID
+        if (ec == null) {
+            return ResponseEntity.notFound().build(); // Retourne 404 si l'EC n'existe pas
+        }
+        return ResponseEntity.ok(ec);
+    }
 }
