@@ -1,9 +1,9 @@
 package uasz.sn.microservice_maquette.GestionEnseignement.model;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.model.EC;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.model.Maquette;
 import jakarta.persistence.*;
 import lombok.Data;
+import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
+import uasz.sn.microservice_maquette.GestionMaquette.model.Maquette;
 
 @Data
 @Entity

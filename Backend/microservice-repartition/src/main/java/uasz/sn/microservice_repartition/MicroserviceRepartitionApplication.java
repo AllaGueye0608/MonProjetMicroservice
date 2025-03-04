@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import uasz.sn.microservice_repartition.model.Enseignant;
 import uasz.sn.microservice_repartition.service.EnseignantService;
 import uasz.sn.microservice_repartition.service.EnseignementService;
@@ -13,6 +14,7 @@ import uasz.sn.microservice_repartition.service.EnseignementService;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
+@EnableScheduling
 public class MicroserviceRepartitionApplication implements CommandLineRunner {
 	@Autowired
 	private EnseignementService enseignementService;

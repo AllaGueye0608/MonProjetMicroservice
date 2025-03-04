@@ -1,11 +1,11 @@
 package uasz.sn.microservice_maquette.GestionFormation.service;
 
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionFormation.model.Formation;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionFormation.repository.FormationRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionFormation.model.Formation;
+import uasz.sn.microservice_maquette.GestionFormation.repository.FormationRepository;
 
 import java.util.List;
 

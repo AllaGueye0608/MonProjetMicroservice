@@ -1,19 +1,19 @@
 package uasz.sn.microservice_maquette.GestionMaquette.controller;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.model.Classe;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.service.ClasseService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.model.EC;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.service.ECService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.model.UE;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.service.UEService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.model.Enseignement;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.service.EnseignementService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.model.Maquette;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.service.MaquetteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uasz.sn.microservice_maquette.GestionClasse.model.Classe;
+import uasz.sn.microservice_maquette.GestionClasse.service.ClasseService;
+import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
+import uasz.sn.microservice_maquette.GestionDesEC.service.ECService;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
+import uasz.sn.microservice_maquette.GestionDesUE.service.UEService;
+import uasz.sn.microservice_maquette.GestionEnseignement.model.Enseignement;
+import uasz.sn.microservice_maquette.GestionEnseignement.service.EnseignementService;
+import uasz.sn.microservice_maquette.GestionMaquette.model.Maquette;
+import uasz.sn.microservice_maquette.GestionMaquette.service.MaquetteService;
 
 import java.util.List;
 

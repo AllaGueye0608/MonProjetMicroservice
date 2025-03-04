@@ -1,12 +1,12 @@
 package uasz.sn.microservice_maquette.GestionClasse.controller;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.model.Classe;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.service.ClasseService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionFormation.model.Formation;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionFormation.service.FormationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uasz.sn.microservice_maquette.GestionClasse.model.Classe;
+import uasz.sn.microservice_maquette.GestionClasse.service.ClasseService;
+import uasz.sn.microservice_maquette.GestionFormation.model.Formation;
+import uasz.sn.microservice_maquette.GestionFormation.service.FormationService;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
 package uasz.sn.microservice_maquette.GestionMaquette.model;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.model.Classe;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.model.UE;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.model.Enseignement;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uasz.sn.microservice_maquette.GestionClasse.model.Classe;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
+import uasz.sn.microservice_maquette.GestionEnseignement.model.Enseignement;
 
 import java.util.ArrayList;
 import java.util.List;

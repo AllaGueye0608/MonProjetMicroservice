@@ -1,11 +1,11 @@
 package uasz.sn.microservice_maquette.GestionMaquette.repository;
 
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.model.Maquette;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import uasz.sn.microservice_maquette.GestionMaquette.model.Maquette;
 
 @RepositoryRestResource
 public interface MaquetteRepository extends JpaRepository<Maquette,Long> {

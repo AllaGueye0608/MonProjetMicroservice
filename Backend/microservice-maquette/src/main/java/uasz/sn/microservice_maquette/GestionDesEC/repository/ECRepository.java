@@ -1,8 +1,8 @@
 package uasz.sn.microservice_maquette.GestionDesEC.repository;
 
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.model.EC;
 import org.springframework.data.jpa.repository.JpaRepository;
+import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
 
 import java.util.List;
 

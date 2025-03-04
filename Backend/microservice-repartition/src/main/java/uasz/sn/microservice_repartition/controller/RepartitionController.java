@@ -137,4 +137,10 @@ public class RepartitionController {
         infos.add(enseignement);infos.add(enseignant);infos.add(type);
         return ResponseEntity.ok(infos);
     }*/
+
+    @GetMapping("/enseignements")
+    public ResponseEntity<?> getEnseignements(){
+        return ResponseEntity.ok(enseignementService.findAll());
+    }
+
 }

@@ -1,9 +1,9 @@
 package uasz.sn.microservice_maquette.GestionDesEC.service;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.model.EC;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.repository.ECRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
+import uasz.sn.microservice_maquette.GestionDesEC.repository.ECRepository;
 
 import java.util.Arrays;
 import java.util.List;

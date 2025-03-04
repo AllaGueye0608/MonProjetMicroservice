@@ -1,10 +1,10 @@
 package uasz.sn.microservice_maquette.GestionMaquette.service;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.service.UEService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.model.Maquette;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionMaquette.repository.MaquetteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionDesUE.service.UEService;
+import uasz.sn.microservice_maquette.GestionMaquette.model.Maquette;
+import uasz.sn.microservice_maquette.GestionMaquette.repository.MaquetteRepository;
 
 import java.util.List;
 

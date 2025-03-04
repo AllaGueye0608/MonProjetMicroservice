@@ -1,9 +1,9 @@
 package uasz.sn.microservice_maquette.GestionClasse.service;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.model.Classe;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionClasse.repository.ClasseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionClasse.model.Classe;
+import uasz.sn.microservice_maquette.GestionClasse.repository.ClasseRepository;
 
 import java.util.List;
 

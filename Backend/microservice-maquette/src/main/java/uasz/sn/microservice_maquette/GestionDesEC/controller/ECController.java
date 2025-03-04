@@ -1,15 +1,15 @@
 package uasz.sn.microservice_maquette.GestionDesEC.controller;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.model.EC;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.service.ECService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.model.UE;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.service.UEService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.model.Enseignement;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.service.EnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import uasz.sn.microservice_maquette.GestionDesEC.model.EC;
+import uasz.sn.microservice_maquette.GestionDesEC.service.ECService;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
+import uasz.sn.microservice_maquette.GestionDesUE.service.UEService;
+import uasz.sn.microservice_maquette.GestionEnseignement.model.Enseignement;
+import uasz.sn.microservice_maquette.GestionEnseignement.service.EnseignementService;
 
 import java.util.List;
 

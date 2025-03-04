@@ -1,10 +1,10 @@
 package uasz.sn.microservice_maquette.GestionClasse.model;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionFormation.model.Formation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uasz.sn.microservice_maquette.GestionFormation.model.Formation;
 
 @Entity
 @Data

@@ -1,8 +1,8 @@
 package uasz.sn.microservice_maquette.GestionEnseignement.repository;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.model.Enseignement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import uasz.sn.microservice_maquette.GestionEnseignement.model.Enseignement;
 
 import java.util.List;
 

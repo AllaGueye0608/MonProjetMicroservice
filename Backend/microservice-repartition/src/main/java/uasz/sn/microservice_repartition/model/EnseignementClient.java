@@ -15,7 +15,7 @@ public interface EnseignementClient {
 
     @GetMapping("/enseignements/esclaves")
     List<EnseignementDTO> getAllEnseignements();
-    @GetMapping("/actuator/health")
+    @GetMapping("/service-maquette/actuator/health")
     ResponseEntity<String> isAvailable();
 
 }

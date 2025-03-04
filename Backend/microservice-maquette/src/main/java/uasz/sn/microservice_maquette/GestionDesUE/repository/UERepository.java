@@ -1,9 +1,9 @@
 package uasz.sn.microservice_maquette.GestionDesUE.repository;
 
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.model.UE;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
 
 @RepositoryRestResource
 public interface UERepository extends JpaRepository<UE,Long> {

@@ -1,12 +1,11 @@
 package uasz.sn.microservice_maquette.GestionDesUE.service;
 
-
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.repository.ECRepository;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesEC.service.ECService;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.model.UE;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionDesUE.repository.UERepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionDesEC.repository.ECRepository;
+import uasz.sn.microservice_maquette.GestionDesEC.service.ECService;
+import uasz.sn.microservice_maquette.GestionDesUE.model.UE;
+import uasz.sn.microservice_maquette.GestionDesUE.repository.UERepository;
 
 import java.util.Arrays;
 import java.util.List;

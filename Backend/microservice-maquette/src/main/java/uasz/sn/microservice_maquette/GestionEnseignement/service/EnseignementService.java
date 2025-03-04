@@ -1,10 +1,10 @@
 package uasz.sn.microservice_maquette.GestionEnseignement.service;
 
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.DTO.EnseignementDTO;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.model.Enseignement;
-import com.uasz.sn.Gestion_Maquette.Gestion.Maquette.Microservice.GestionEnseignement.repository.EnseignementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uasz.sn.microservice_maquette.GestionEnseignement.DTO.EnseignementDTO;
+import uasz.sn.microservice_maquette.GestionEnseignement.model.Enseignement;
+import uasz.sn.microservice_maquette.GestionEnseignement.repository.EnseignementRepository;
 
 import java.util.ArrayList;
 import java.util.List;
