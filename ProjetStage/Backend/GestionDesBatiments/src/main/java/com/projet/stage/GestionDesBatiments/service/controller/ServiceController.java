@@ -52,9 +52,13 @@ public class ServiceController {
     }
 
     @PutMapping("/{id}/modifier")
-    public ResponseEntity<?> modifierService(@PathVariable Long id,@RequestBody ServiceF update){
+    public ResponseEntity<?> modifierService(@PathVariable Long id,@RequestBody ServiceF update,@RequestParam Long batiment){
         ServiceF existing = serviceService.findById(id);
         if(existing != null){
+            if(batiment != null){
+                Batiment bat = batimentService.findByid(batiment);
+                update.setBatiment(bat);
+            }
             ServiceF updated = serviceService.update(existing,update);
             if (updated != null){
                 return ResponseEntity.ok(updated);
@@ -66,7 +70,7 @@ public class ServiceController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/supprimer")
     public ResponseEntity<?> supprimerService(@PathVariable Long id){
         ServiceF service = serviceService.findById(id);
         if(service != null){

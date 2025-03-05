@@ -49,9 +49,13 @@ public class SalleController {
     }
 
     @PutMapping("/{id}/modifier")
-    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Salle update){
+    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Salle update,@RequestParam(required = true) Long service){
         Salle existing = salleService.findById(id);
         if(existing != null){
+            if(service != null){
+                ServiceF s = serviceService.findById(service);
+                update.setServiceF(s);
+            }
             Salle updated = salleService.update(existing,update);
             if(updated != null){
                 return ResponseEntity.ok(updated);

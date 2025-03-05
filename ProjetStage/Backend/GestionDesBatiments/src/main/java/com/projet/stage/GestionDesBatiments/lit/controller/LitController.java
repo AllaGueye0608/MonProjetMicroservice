@@ -52,9 +52,11 @@ public class LitController {
     }
 
     @PutMapping("/{id}/modifier")
-    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Lit update){
+    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Lit update,@RequestParam(required = false) Long salle){
         Lit existing = litService.findById(id);
         if(existing != null){
+            Salle salle1 = salleService.findById(salle);
+            update.setSalle(salle1);
             Lit updated = litService.update(existing,update);
             if(updated != null){
                 return ResponseEntity.ok(updated);

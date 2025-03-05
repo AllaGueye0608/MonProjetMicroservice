@@ -49,9 +49,11 @@ public class BureauController {
     }
 
     @PutMapping("/{id}/modifier")
-    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Bureau update){
+    public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Bureau update,@RequestParam(required = true) Long service){
         Bureau existing = bureauService.findById(id);
         if(existing != null){
+            ServiceF serviceF = serviceService.findById(service);
+            update.setServiceF(serviceF);
             Bureau updated = bureauService.update(existing,update);
             if (updated != null){
                 return ResponseEntity.ok(updated);
