@@ -2,7 +2,6 @@ package com.projet.stage.GestionDesBatiments.batiment.controller;
 
 import com.projet.stage.GestionDesBatiments.batiment.model.Batiment;
 import com.projet.stage.GestionDesBatiments.batiment.service.BatimentService;
-import jakarta.ws.rs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,7 +50,7 @@ public class BatimentController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/supprimer")
     public ResponseEntity<?> supprimerBatiment(@PathVariable Long id){
         Batiment existing = batimentService.findByid(id);
         if(existing != null){

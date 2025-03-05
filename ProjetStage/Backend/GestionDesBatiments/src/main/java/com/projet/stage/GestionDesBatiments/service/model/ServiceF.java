@@ -23,9 +23,9 @@ public class ServiceF {
     @JoinColumn(name = "batiment_id", nullable = false)
     private Batiment batiment;
 
-    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "serviceF", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Salle> salles;
 
-    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "serviceF", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Bureau> bureauList;
 }

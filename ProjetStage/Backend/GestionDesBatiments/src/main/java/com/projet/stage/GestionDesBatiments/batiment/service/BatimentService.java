@@ -24,9 +24,6 @@ public class BatimentService {
         if(!existing.getNom().equals(batiment.getNom()) && !batiment.getNom().isEmpty()){
                 existing.setNom(batiment.getNom());
         }
-        if(existing.getServiceFS() != batiment.getServiceFS()){
-            existing.setServiceFS(batiment.getServiceFS());
-        }
         return batimentRepository.save(existing);
     }
 
