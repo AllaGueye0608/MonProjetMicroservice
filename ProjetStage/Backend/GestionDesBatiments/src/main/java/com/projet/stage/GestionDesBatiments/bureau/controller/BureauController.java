@@ -22,6 +22,16 @@ public class BureauController {
         return ResponseEntity.ok(bureauService.findAll());
     }
 
+    @GetMapping("/esclaves")
+    public ResponseEntity<?> getBureauDTOList(){
+        return ResponseEntity.ok(bureauService.getBureaux());
+    }
+
+    @GetMapping("{id}/esclave")
+    public ResponseEntity<?> getBureauDTO(@PathVariable Long id){
+        return ResponseEntity.ok(bureauService.getBureau(id));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> getBureau(@PathVariable Long id){
         Bureau exising = bureauService.findById(id);

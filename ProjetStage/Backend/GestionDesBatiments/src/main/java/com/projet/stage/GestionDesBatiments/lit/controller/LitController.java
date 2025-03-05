@@ -34,6 +34,18 @@ public class LitController {
         }
     }
 
+    @GetMapping("/esclaves")
+    public ResponseEntity<?> getLitDTOs(){
+        return ResponseEntity.ok(litService.getDTOList());
+    }
+
+    @GetMapping("/{id}/esclave")
+    public ResponseEntity<?> getLitDTO(@PathVariable Long id){
+        return ResponseEntity.ok(litService.getDTO(id));
+    }
+
+
+
     @PostMapping("/ajouter")
     public ResponseEntity<?> ajouter(@RequestParam Long id,@RequestBody Lit lit){
         if(id != null){
@@ -50,6 +62,9 @@ public class LitController {
         }
 
     }
+
+
+
 
     @PutMapping("/{id}/modifier")
     public ResponseEntity<?> modifier(@PathVariable Long id,@RequestBody Lit update,@RequestParam(required = false) Long salle){
