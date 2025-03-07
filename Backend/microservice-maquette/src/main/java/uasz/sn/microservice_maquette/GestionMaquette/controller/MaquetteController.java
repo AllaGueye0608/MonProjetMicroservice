@@ -113,13 +113,12 @@ public class MaquetteController {
     }
 
     @GetMapping("/{id}/detail")
-    public ResponseEntity<List<UE>> detailMaquette(@PathVariable Long id) {
+    public ResponseEntity<Maquette> detailMaquette(@PathVariable Long id) {
         Maquette maquette = maquetteService.findById(id);
         if (maquette == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-        List<UE> listeUE = maquette.getUeList();
-        return new ResponseEntity<>(listeUE, HttpStatus.OK);
+        return new ResponseEntity<>(maquette, HttpStatus.OK);
     }
 
     @PostMapping("/{id}/archiver")

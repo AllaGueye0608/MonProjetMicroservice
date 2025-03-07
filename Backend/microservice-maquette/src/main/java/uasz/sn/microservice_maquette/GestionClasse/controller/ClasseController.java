@@ -11,6 +11,8 @@ import uasz.sn.microservice_maquette.GestionFormation.service.FormationService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000") // Autoriser les requêtes depuis React
+
 @RequestMapping("/classes")
 public class ClasseController {
     private final ClasseService classeService;
@@ -56,7 +58,7 @@ public class ClasseController {
                 .body("La classe n'existe pas");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/supprimer")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Classe classe = classeService.findById(id);
         if (classe != null) {
@@ -65,5 +67,10 @@ public class ClasseController {
         }
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body("La classe n'existe pas");
+    }
+    @GetMapping("/byFormation/{idFormation}")
+    public ResponseEntity<List<Classe>> getClassesByFormation(@PathVariable Long idFormation) {
+        List<Classe> classes = classeService.findByFormationId(idFormation);
+        return ResponseEntity.ok(classes);
     }
 }

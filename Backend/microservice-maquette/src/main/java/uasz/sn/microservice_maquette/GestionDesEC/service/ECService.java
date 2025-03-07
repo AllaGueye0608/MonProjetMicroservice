@@ -29,8 +29,9 @@ public class ECService {
         }
     }
 
-    public List<EC> findByUEId(Long ueId){
-        return findByUEId(ueId);
+
+    public List<EC> findByUEId(Long ueId) {
+        return ecRepository.findByUeId(ueId); // Appel de la méthode corrigée
     }
     public void delete(EC ec){
         ecRepository.delete(ec);

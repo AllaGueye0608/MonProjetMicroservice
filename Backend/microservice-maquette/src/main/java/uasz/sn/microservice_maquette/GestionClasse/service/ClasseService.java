@@ -16,7 +16,9 @@ public class ClasseService {
         return classeRepository.save(classe);
     }
 
-
+    public List<Classe> findByFormationId(Long idFormation) {
+        return classeRepository.findByFormationId(idFormation);
+    }
     public Classe update(Classe classe){
         return classeRepository.save(classe);
     }

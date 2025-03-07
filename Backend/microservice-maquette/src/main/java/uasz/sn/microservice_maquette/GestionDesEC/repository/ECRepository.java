@@ -10,5 +10,6 @@ public interface ECRepository extends JpaRepository<EC,Long> {
     public List<EC> findByUeId(Long id);
     public EC findByIntitule(String intitule);
     public EC findByCode(String code);
+
 }
 
