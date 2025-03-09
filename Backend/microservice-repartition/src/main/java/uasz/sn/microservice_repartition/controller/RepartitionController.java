@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uasz.sn.microservice_repartition.model.Repartition;
+import uasz.sn.microservice_repartition.service.EnseignantService;
 import uasz.sn.microservice_repartition.service.EnseignementService;
 import uasz.sn.microservice_repartition.service.RepartitionService;
 
@@ -18,6 +19,9 @@ public class RepartitionController {
     private RepartitionService repartitionService;
     @Autowired
     private EnseignementService enseignementService;
+    @Autowired
+    private EnseignantService enseignantService;
+
     @GetMapping("")
     public ResponseEntity<List<Repartition>> findAll() {
         return ResponseEntity.ok(repartitionService.findAll());
@@ -100,8 +104,7 @@ public class RepartitionController {
     }
 
     @PostMapping("/ajouter")
-    public ResponseEntity<?> ajouter(@RequestBody Repartition repartition){
-
+    public ResponseEntity<?> ajouter(@RequestBody Repartition repartition,@RequestParam Long idEnseignant,@RequestParam Long idEnseignement){
         // Vérifier si une repartition avec les mêmes enseignant, enseignement et type existe déjà
         Repartition repartitionExisting = repartitionService.findByEnseignantAndEnseignementAndType(
                 repartition.getEnseignant(),
@@ -140,7 +143,8 @@ public class RepartitionController {
 
     @GetMapping("/enseignements")
     public ResponseEntity<?> getEnseignements(){
-        return ResponseEntity.ok(enseignementService.findAll());
+
+        return ResponseEntity.ok(enseignementService.saveAll());
     }
 
 }

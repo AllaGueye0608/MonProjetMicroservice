@@ -20,39 +20,46 @@ public class EnseignementService {
     }
 
     public EnseignementDTO getEnseignementDTO(Long id) {
-        Optional<Enseignement> enseignementOpt = enseignementRepository.findById(id);
+        Optional<Enseignement> optionalEnseignement = enseignementRepository.findById(id);
 
-        if (enseignementOpt.isEmpty()) {
-            return null; // Retourne null si l'enseignement n'existe pas
+        if (optionalEnseignement.isEmpty()) {
+            System.out.println("Aucun enseignement trouvé pour l'ID : " + id);
+            return null;  // Retourne null au lieu de lever une exception
         }
 
-        Enseignement enseignement = enseignementOpt.get();
+        Enseignement enseignement = optionalEnseignement.get();
         EnseignementDTO enseignementDTO = new EnseignementDTO();
+
         enseignementDTO.setId(enseignement.getId());
-        enseignementDTO.setNom(enseignement.getEc().getIntitule()
-                );
+        enseignementDTO.setNiveau(enseignement.getMaquette().getClasse().getNiveau());
         enseignementDTO.setFormation(enseignement.getMaquette().getClasse().getFormation().getIntitule());
         enseignementDTO.setSemestre(enseignement.getMaquette().getSemestre());
-        enseignementDTO.setNiveau(enseignement.getMaquette().getClasse().getNiveau());
+        enseignementDTO.setNom(enseignement.getEc().getIntitule());
 
-        return enseignementDTO;  // ✅ On retourne bien l'objet
+        return enseignementDTO;
     }
 
-    public List<EnseignementDTO> getEnseignementsDTO(){
+
+    public List<EnseignementDTO> getEnseignementsDTO() {
         List<Enseignement> enseignements = enseignementRepository.findAll();
         List<EnseignementDTO> enseignementDTOS = new ArrayList<>();
 
         for (Enseignement e : enseignements) {
-            EnseignementDTO enseignementDTO = getEnseignementDTO(e.getId());
-            if (enseignementDTO != null) {
+            if (e != null) {
+                EnseignementDTO enseignementDTO = new EnseignementDTO(
+                        e.getId(),
+                        e.getMaquette().getClasse().getFormation().getIntitule(),
+                        e.getMaquette().getClasse().getNiveau(),
+                        e.getMaquette().getSemestre(),
+                        e.getEc().getIntitule()
+                );
                 enseignementDTOS.add(enseignementDTO);
-            } else {
-                System.out.println("EnseignementDTO null pour l'ID : " + e.getId());
             }
         }
 
         return enseignementDTOS;
     }
+
 
     public boolean Exist(Long ec, Long maquette){
         if(enseignementRepository.findByEcIdAndMaquetteId(ec,maquette) != null){

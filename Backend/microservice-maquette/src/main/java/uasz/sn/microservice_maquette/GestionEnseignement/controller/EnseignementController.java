@@ -19,45 +19,23 @@ public class EnseignementController {
     private EnseignementService enseignementService;
 
     @GetMapping("")
-    public ResponseEntity<?> getAll(){
+    public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(enseignementService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id){
+    public ResponseEntity<?> findById(@PathVariable("id") Long id) {
         EnseignementDTO enseignement = enseignementService.getEnseignementDTO(id);
-        if(enseignement == null){
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body("L'enseignement n'existe pas");
+        if (enseignement == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("L'enseignement avec l'ID " + id + " n'existe pas.");
         }
         return ResponseEntity.ok(enseignement);
     }
 
-
-    /*@GetMapping("/{id}/info")
-    public ResponseEntity<?> getNom(@PathVariable Long id){
-        Enseignement enseignement = enseignementService.findById(id);
-        List<String> info = new ArrayList<>();
-        if(enseignement != null){
-            String nom = enseignement.getEc().getIntitule();
-            String semestre =""+enseignement.getMaquette().getSemestre();
-            String niveau = ""+enseignement.getMaquette().getClasse().getNiveau();
-            String formation = enseignement.getMaquette().getClasse().getFormation().getIntitule();
-            info.add(nom);info.add(semestre);info.add(niveau);info.add(formation);
-        }else{
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body("L'enseignement n'existe pas");
-        }
-        return ResponseEntity.ok(info);
-    }*/
-
     @GetMapping("/esclaves")
-    public ResponseEntity<?> getEsclave(){
+    public ResponseEntity<?> getAllEnseignements() {
         List<EnseignementDTO> enseignementDTOS = enseignementService.getEnseignementsDTO();
-        if(enseignementDTOS == null){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("mal recuperations de enseignements");
-        }
-        System.out.println("enseignement trouvé");
         return ResponseEntity.ok(enseignementDTOS);
     }
 }

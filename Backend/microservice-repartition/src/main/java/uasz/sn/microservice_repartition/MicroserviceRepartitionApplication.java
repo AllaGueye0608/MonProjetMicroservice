@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import uasz.sn.microservice_repartition.model.Enseignant;
 import uasz.sn.microservice_repartition.service.EnseignantService;
 import uasz.sn.microservice_repartition.service.EnseignementService;
-
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
@@ -28,9 +27,8 @@ public class MicroserviceRepartitionApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		enseignementService.saveAll();
-		for(int i=0;i<5;i++){
-			enseignantService.save(new Enseignant());
-			//enseignementService.save(new Enseignement());
-		}
+		Enseignant modou = new Enseignant();modou.setNom("Gueye");modou.setPrenom("Modou");
+		Enseignant abdou = new Enseignant();abdou.setNom("SENE");abdou.setPrenom("Abdou");
+		enseignantService.save(modou);enseignantService.save(abdou);
 	}
 }

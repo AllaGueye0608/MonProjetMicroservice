@@ -42,9 +42,6 @@ public class MaquetteController {
     public ResponseEntity<Maquette> ajouterMaquette(@RequestParam Long classe, @RequestParam Long[] idUEs, @RequestParam int semestre) {
         Maquette maquette = new Maquette();
         Classe classe1 = classeService.findById(classe);
-        if (classe1 == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);  // Handle error if class is not found
-        }
         maquette.setNom(classe1.getFormation().getIntitule() + '-' + classe1.getNiveau());
         maquette.setActive(true);
         maquette.setArchive(false);
@@ -70,7 +67,7 @@ public class MaquetteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(maquette1);
     }
 
-    @PostMapping("/Maquette/modifier")
+    @PostMapping("/modifier")
     public ResponseEntity<Maquette> modifierMaquette(@RequestParam Long id, @RequestParam String nom, @RequestParam int semestre, @RequestParam Long[] idUEs) {
         Maquette maquette = maquetteService.findById(id);
         if (maquette == null) {
