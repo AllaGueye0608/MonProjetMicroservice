@@ -13,11 +13,15 @@ public class DossierMedicalService {
     private DossierMedicalRepository dossierMedicalRepository;
 
     public DossierMedical create(DossierMedical dossierMedical){
+        DossierMedical existing = dossierMedicalRepository.findByNumeroDossier(dossierMedical.getNumeroDossier());
+        if(existing != null){
+            return null;
+        }
         return dossierMedicalRepository.save(dossierMedical);
     }
 
     public DossierMedical update(DossierMedical update){
-        DossierMedical existing = dossierMedicalRepository.findByNumeroDossier(update.getNumeroDossier());
+        DossierMedical existing = dossierMedicalRepository.findById(update.getId()).get();
         if(existing != null){
             return dossierMedicalRepository.save(update);
         }else {

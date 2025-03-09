@@ -1,7 +1,7 @@
-package com.projet.stage.GestionDesConsultations.patient.model;
+package com.projet.stage.GestionDesHospitalisation.patient.model;
 
-import com.projet.stage.GestionDesConsultations.consultation.model.Consultation;
-import com.projet.stage.GestionDesConsultations.dossiermedical.model.DossierMedical;
+import com.projet.stage.GestionDesHospitalisation.hospitalisation.model.Hospitalisation;
+import com.projet.stage.GestionDesHospitalisation.lit.model.Lit;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity @Data @AllArgsConstructor @NoArgsConstructor
+@Entity
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +21,12 @@ public class Patient {
     private String prenom;
     private String nom;
     private LocalDate dateNaissance;
-    private Sexe sexe;
+    private String sexe;
     private String adresse;
     private String telephone;
+    private boolean active;
+
     @OneToMany(mappedBy = "patient", orphanRemoval = false)
-    private List<Consultation> consultations;
-    @OneToOne(cascade = CascadeType.REMOVE)
-    private DossierMedical dossierMedical;
+    private List<Hospitalisation> hospitalisations;
+
 }

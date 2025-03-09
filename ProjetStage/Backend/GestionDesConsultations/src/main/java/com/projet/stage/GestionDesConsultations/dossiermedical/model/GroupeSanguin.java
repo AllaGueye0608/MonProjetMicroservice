@@ -1,4 +1,4 @@
-package com.projet.stage.GestionDesConsultations.patient.model;
+package com.projet.stage.GestionDesConsultations.dossiermedical.model;
 
 public enum GroupeSanguin {
     A_POSITIF, A_NEGATIF,

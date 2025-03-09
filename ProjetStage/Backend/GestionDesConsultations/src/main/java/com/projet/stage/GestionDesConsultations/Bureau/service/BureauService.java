@@ -17,13 +17,18 @@ public class BureauService {
         return bureauRepository.save(bureau);
     }
 
-    public Bureau update(Bureau existing,Bureau update){
-        if(!existing.getService().equals(update.getService())){
-            existing.setService(update.getService());
+    public Bureau update(Bureau update){
+        Bureau existing = bureauRepository.findById(update.getId()).get();
+        if(existing != null){
+            Bureau updated = bureauRepository.save(update);
+            if(updated != null){
+                return updated;
+            }else{
+                return null;
+            }
+        }else {
+            return null;
         }
-
-        return bureauRepository.save(existing);
-
     }
 
     public void delete(Bureau bureau){
@@ -34,7 +39,7 @@ public class BureauService {
         return bureauRepository.findAll();
     }
 
-    public Bureau findById(Long numero){
-        return bureauRepository.findByNumero(numero);
+    public Bureau findById(Long id){
+        return bureauRepository.findById(id).get();
     }
 }

@@ -12,7 +12,8 @@ public class Lit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false,unique = true)
+    private int numero;
     private String type; // Exemple: "Médicalisé", "Simple", "Double", "Enfant"
 
     @Enumerated(EnumType.STRING)

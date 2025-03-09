@@ -13,17 +13,30 @@ public class MedecinService {
     private MedecinRepository medecinRepository;
 
     public Medecin create(Medecin medecin){
+        Medecin existing = medecinRepository.findByMatricule(medecin.getMatricule());
+        if(existing != null){
+            return null;
+        }
         return medecinRepository.save(medecin);
     }
 
     public Medecin update(Medecin update){
-        Medecin existing = medecinRepository.findByMatricule(update.getMatricule());
+        Medecin existing = medecinRepository.findById(update.getId()).get();
         if(existing != null){
             return medecinRepository.save(update);
         }
         else {
             return null;
         }
+    }
+
+    public Medecin activer(Medecin medecin){
+        if(medecin.isActive()){
+            medecin.setActive(false);
+        }else{
+            medecin.setActive(true);
+        }
+        return medecinRepository.save(medecin);
     }
 
     public void delete(Medecin medecin){
@@ -34,7 +47,7 @@ public class MedecinService {
         return medecinRepository.findAll();
     }
 
-    public Medecin findById(Long matricule){
-        return medecinRepository.findByMatricule(matricule);
+    public Medecin findById(Long id){
+        return medecinRepository.findById(id).get();
     }
 }

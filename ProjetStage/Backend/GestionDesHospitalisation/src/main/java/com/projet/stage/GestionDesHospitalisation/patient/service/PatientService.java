@@ -1,7 +1,7 @@
-package com.projet.stage.GestionDesConsultations.patient.service;
+package com.projet.stage.GestionDesHospitalisation.patient.service;
 
-import com.projet.stage.GestionDesConsultations.patient.model.Patient;
-import com.projet.stage.GestionDesConsultations.patient.repository.PatientRepository;
+import com.projet.stage.GestionDesHospitalisation.patient.model.Patient;
+import com.projet.stage.GestionDesHospitalisation.patient.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +22,10 @@ public class PatientService {
 
     public Patient update(Patient update){
         Patient existing = patientRepository.findById(update.getId()).get();
-        if(existing != null){
-            return patientRepository.save(update);
-        }else {
+        if(existing == null){
             return null;
         }
+        return patientRepository.save(existing);
     }
 
     public void delete(Patient patient){

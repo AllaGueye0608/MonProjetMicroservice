@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class Bureau {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private Long numero;
     private String service;
     @OneToOne

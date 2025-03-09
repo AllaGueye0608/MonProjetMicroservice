@@ -13,11 +13,13 @@ import java.util.List;
 public class DossierMedical {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long numeroDossier;
     private String antecedents;
     private List<String> allergies;
-    private List<String> médicationsAntérieures;
+    private List<String> medicationsAnterieures;
     private List<String> pathologiesChroniques;
+    private GroupeSanguin groupeSanguin;
     @OneToOne
     private Patient patient;
 }
