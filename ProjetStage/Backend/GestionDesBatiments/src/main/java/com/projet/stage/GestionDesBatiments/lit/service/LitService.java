@@ -19,17 +19,13 @@ public class LitService {
     }
 
 
-    public Lit update(Lit existing,Lit update){
-        if(!existing.getType().equals(update.getType())){
-            existing.setType(update.getType());
+
+    public Lit update(Lit lit){
+        Lit existing = litRepository.findById(lit.getId()).get();
+        if(existing == null){
+            return null;
         }
-        if(!existing.getEtat().equals(update.getEtat())){
-            existing.setEtat(update.getEtat());
-        }
-        if(existing.getSalle() != update.getSalle()){
-            existing.setSalle(update.getSalle());
-        }
-        return litRepository.save(existing);
+        return litRepository.save(lit);
     }
 
     public void delete(Lit lit){

@@ -72,7 +72,10 @@ public class LitController {
         if(existing != null){
             Salle salle1 = salleService.findById(salle);
             update.setSalle(salle1);
-            Lit updated = litService.update(existing,update);
+            existing.setType(update.getType());
+            existing.setNumero(update.getNumero());
+            existing.setSalle(update.getSalle());
+            Lit updated = litService.update(existing);
             if(updated != null){
                 return ResponseEntity.ok(updated);
             }else {
